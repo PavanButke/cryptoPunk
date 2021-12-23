@@ -15,7 +15,7 @@ function Main() {
                     
                     </div>
                         <div className='punkDetails' style={{color: '#f5f6fa'}}>
-                                <div className='title'>
+                                <div className='title'  >
                                     NoDeep Punk
                                     </div>
                                 <span className='itemNumber'>.#3</span>                      
