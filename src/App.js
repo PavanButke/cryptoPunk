@@ -5,6 +5,7 @@ import collectionCard from './components/CollectionCard';
 import Header from './components/Header';
 import {useState , useEffect} from 'react';
  import axios from 'axios'
+import Punklist from './components/Punklist';
 
 
 
@@ -21,14 +22,11 @@ function App() {
             'https://testnets-api.opensea.io/assets?asset_contract_address=0x7aa3b7500eB82405D5128D29b73C57423B97bB0a&order_direction=asc'
           )
          console.log(openseaData.data.assets)
-            setPunkListData(openseaData.data.assets)
+             setPunkListData(openseaData.data.assets)
         } 
 
       return getMyNfts()
   }, [])
-
-
-
 
 
   return (
@@ -40,7 +38,8 @@ function App() {
         name={'NoDeep Punk'}
          traits={[{ value: 7}]} 
          image='https://ipfs.thirdweb.com/ipfs/bafybeigqkficum3anns36jid3dxvc4yfauyuvqjulbg43n23qxn3ce3tyu'/>
-
+        
+        <Punklist punkListData={punkListData} />
        </div>
   )     
 
