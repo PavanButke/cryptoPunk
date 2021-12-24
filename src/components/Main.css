@@ -47,13 +47,11 @@
 .itemNumber{
     color:#3f729b;
     font-size: 72px;
-    align-self: center;
+    font-weight: 600;
+    align-self: left;
 }
 
 .owner{
-    display: flex;
-    margin: 10px 0;
-    height: 50px;
 }
 
 .owner > div{
@@ -81,18 +79,24 @@
 .ownerDetails{
     display: flex;
     align-items: center;
+    
     flex:1;
 
 }
 
 .ownerNameAndHandle{
+  
     flex:1
+    
 }
 .ownerHandle {
     color: #3b5998;
 }
 
-.ownerLink
+.ownerUID {
+
+      color: white;
+}
 
 
 

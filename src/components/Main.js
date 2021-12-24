@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect  , useState} from 'react'
 import Punklist from './Punklist'
 import './Main.css'
 
-function Main() {
+const Main = ({ selectedPunk , punkListData}) =>{
+
+    const [activePunk , setActivePunk] = useState(punkListData[0])
+
+    useEffect(
+        () => {
+            setActivePunk(punkListData[selectedPunk])
+        }, [punkListData , selectedPunk])
+
     return (
         <div className='main'>
                 <div className='mainContent'>
@@ -10,26 +18,33 @@ function Main() {
                         <div className='punkContainer'>
 
                             <img className='selectedPunk'
-                         src='https://ipfs.thirdweb.com/ipfs/bafybeigqkficum3anns36jid3dxvc4yfauyuvqjulbg43n23qxn3ce3tyu'></img>
+                             src={activePunk.image_original_url} 
+                         ></img>
                         </div>
                     
                     </div>
                         <div className='punkDetails' style={{color: '#f5f6fa'}}>
                                 <div className='title'  >
-                                    NoDeep Punk
+                              {activePunk.name}
                                     </div>
-                                <span className='itemNumber'>.#3</span>                      
+                                <span className='itemNumber'>.#{activePunk.token_id}</span>                      
                     </div>
 
                     <div  className='owner'>
                         <div className='ownerImageContainer'>
-                            <img src='https://media-exp1.licdn.com/dms/image/C4E03AQExWPxut0K3pA/profile-displayphoto-shrink_200_200/0/1613138028550?e=1645660800&v=beta&t=cqKQmIzPuyFm4S9gkY38h4xI8oA-IpamL1ks-2YKvGk' ></img>
+                            <img 
+                            src={ 
+                            
+                                activePunk.owner.profile_img_url
+                                
+                            }
+                            ></img>
                         </div>
 
                         <div className='ownerDetails'></div>
                         <div className='ownerNameAndHandle' >
-                            <div>0x7aa3b7500eB82405D5128D29b73C57423B97bB0a</div>
-                            <div className='ownerHandle'>@cleverprogrammer</div>
+                            <div className='ownerUID'>{activePunk.owner.address}</div>
+                            <div className='ownerHandle'>@Pavan</div>
                         </div>
 
                         <div class="container">

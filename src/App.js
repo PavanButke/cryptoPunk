@@ -14,6 +14,7 @@ import Main from './components/Main';
 function App() {
 
   const [punkListData , setPunkListData] = useState([])
+  const [selectedPunk , setSelectedPunk] = useState(1)
 
   useEffect(() => {
         const getMyNfts = async ()=>{
@@ -34,9 +35,19 @@ function App() {
        
       <div className='app'>
       <Header />
-      
-        <Main/>
-        <Punklist punkListData={punkListData} />
+        {
+            
+            punkListData.length > 0 && (
+              <>
+              <Main  punkListData={punkListData} selectedPunk={selectedPunk}/>
+              <Punklist punkListData={punkListData} 
+               setSelectedPunk={setSelectedPunk} />
+            
+            </>
+            )            
+
+        }
+       
        </div>
   )     
 
