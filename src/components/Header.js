@@ -8,8 +8,9 @@
 // import InputBase from '@mui/material/InputBase';
 // import MenuIcon from '@mui/icons-material/Menu';
 // import SearchIcon from '@mui/icons-material/Search';
-
+import { NavLink } from 'react-router-dom'
 import './Header.css'
+import { useHistory } from "react-router-dom";
 import punkLogo from '../assets/header/cryptopunk-logo.png'
 import searchIcon from '../assets/header/search.png'
 import themeSwitchIcon from '../assets/header/theme-switch.png'
@@ -58,6 +59,10 @@ import themeSwitchIcon from '../assets/header/theme-switch.png'
   
 
 const Header = () => {
+  let history = useHistory();
+
+ 
+
     return (
     <div className='header'>
         <div  className='logoContainer'>
@@ -72,7 +77,11 @@ const Header = () => {
               
               </div>
 
-              <input className='searchInput' placeholder='Find something may be a collection or a gift..'/>
+              <input className='searchInput' placeholder='Find something may be a collection or a gift..'
+              
+
+              
+              />
 
 
 
@@ -113,10 +122,14 @@ const Header = () => {
         </Toolbar>
       </AppBar>
     </Box> */}
-
+         
+             
+            
+            
+            
                 
             
-        <div/>
+     
     
 
 
@@ -126,9 +139,19 @@ const Header = () => {
      
      <div className='headerItems'>
 
-        <button className='btn12'>Drop</button>
-        <button className='btn12'>Marketplace</button>
-        <button className='btn12'>Create</button>
+        <button   onClick={() => {
+          history.push("/Drop");
+        }}  className='btn12'>Drop</button>
+        <button 
+              onClick={()=>{
+                  history.push("/Marketplace")}}
+
+           className='btn12'>Marketplace</button>
+        <button 
+              onClick={()=>{
+                history.push("/Create")}}
+        
+        className='btn12'>Create</button>
 
      </div>
     <div className='headerActions'>
@@ -140,7 +163,11 @@ const Header = () => {
 
     <div className='loginContainer'>
 
-      <button className='loginButton' >
+      <button  
+          onClick={()=>{
+            history.push("./LogIn/Login")}}
+      
+      className='loginButton' >
         Get in
       </button>
 

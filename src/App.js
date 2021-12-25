@@ -1,54 +1,60 @@
+import React from 'react'
+import Drop from './components/Drop';
+import Marketplace from './components/Marketplace';
+import Create from './components/Create';
+import Login from './components/Login';
+import { BrowserRouter as Router , Switch , Route} from 'react-router-dom';
 
-import './App.css';
-import CollectionCard from './components/CollectionCard';
-import collectionCard from './components/CollectionCard';
-import Header from './components/Header';
-import {useState , useEffect} from 'react';
- import axios from 'axios'
-import Punklist from './components/Punklist';
-import Main from './components/Main';
-
+import Home from './components/Home';
 
 
+function App()  {
 
-function App() {
-
-  const [punkListData , setPunkListData] = useState([])
-  const [selectedPunk , setSelectedPunk] = useState(1)
-
-  useEffect(() => {
-        const getMyNfts = async ()=>{
- 
-          
-          const openseaData =  await axios.get(
-            'https://testnets-api.opensea.io/assets?asset_contract_address=0x7aa3b7500eB82405D5128D29b73C57423B97bB0a&order_direction=asc'
-          )
-         console.log(openseaData.data.assets)
-             setPunkListData(openseaData.data.assets)
-        } 
-
-      return getMyNfts()
-  }, [])
+  
 
 
   return (
-       
-      <div className='app'>
-      <Header />
-        {
-            
-            punkListData.length > 0 && (
-              <>
-              <Main  punkListData={punkListData} selectedPunk={selectedPunk}/>
-              <Punklist punkListData={punkListData} 
-               setSelectedPunk={setSelectedPunk} />
-            
-            </>
-            )            
 
-        }
+    <Router>
+
+  
+    <Switch>
+
+      <Route path="/Drop">
+        <Drop/>
+      </Route>
+
+      <Route path="/Marketplace">
+            <Marketplace />
+      </Route>
+
+
+
+      <Route path="/Create">
+      <Create/>
+      </Route>
+            
+
+        <Route path="/Login">
+        <Login/>
+        </Route>
+
+        <Route path='/'>
+          <Home/>
+        </Route>
+
        
-       </div>
+
+    </Switch>
+    </Router>
+
+   
+
+
+          
+
+
+
   )     
 
   
