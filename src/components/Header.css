@@ -66,7 +66,7 @@
     position: relative;
     background-color: rgb(1, 28, 49);
     overflow: hidden;
-    
+    justify-content: center;
     margin-bottom: 5px;
     transition: all .3s;
     border-radius: 10px;
@@ -154,8 +154,8 @@
     height: 100vh;
     align-items: center;
     justify-content: center;
-    font-family:'Franklin Gothic Medium';
-    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+ 
   
   
   }
@@ -193,6 +193,44 @@
   }
   
   .loginButton:hover:before {
+    transform: translateY(0);
+  }
+  
+
+
+  .signupButton{
+    border: 3px solid #191919;
+    cursor: pointer;
+    padding: 20px 40px;
+    font-size: 16px;
+    color: #edf3f5;
+    position: relative;
+    background:  transparent;
+    overflow: hidden;
+    margin-bottom: 10px;
+    transition: all .3s;
+    border-radius: 20px;
+    border-color: rgb(51, 1, 51);
+  }
+
+  .signupButton:before {
+    content: "Click Now!";
+    color: rgb(3, 15, 8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:  linear-gradient(to right ,#3f728a,#150442 );
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
+    transition: all .5s ease-out;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .signupButton:hover:before {
     transform: translateY(0);
   }
   
