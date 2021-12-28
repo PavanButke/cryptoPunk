@@ -1,57 +1,51 @@
-import { useHistory } from "react-router-dom";
+import React, { useRef, useState } from "react"
+import { Form, Button, Card, Alert } from "react-bootstrap"
 
-let SignUp = () => {
-  let history = useHistory();
+import { Link, useHistory } from "react-router-dom"
+import { useAuth } from "../Firebase/context/AuthContext"
+
+export default function Signup() {
+
+  const emailRef = useRef()
+  const passwordRef = useRef()
+  const passwordConfirmRef = useRef()
+  const {signup} = useAuth()
+  function handleSubmit(e){
+
+    e.preventDefault()
+    signup(emailRef.current.value , passwordRef.current.value)
+  }
+
+
 
   return (
     <>
-      <div className="row">
-        <div className="col-4 offset-4">
-          <h1 className="mt-4 mb-4">Sign Up!</h1>
-          <form className="mt-4">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">
-                Email address
-              </label>
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">
-                Password
-              </label>
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-              />
-            </div>
-
-            <div class="mb-3">
-              <label for="exampleInputPassword2" class="form-label">
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword2"
-              />
-            </div>
-
-            <button class="btn btn-primary">Sign Up</button>
-            <br />
-            <br />
-            <button onClick={()=>{
-                history.push("/Login")
-            }} class="btn btn-primary">Login</button>
-          </form>
-        </div>
+      <Card>
+        <Card.Body>
+          <h2 className="text-center mb-4">Sign Up</h2>
+       
+          <Form >
+            <Form.Group id="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" ref={emailRef} required />
+            </Form.Group>
+            <Form.Group id="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" ref={passwordRef} required />
+            </Form.Group>
+            <Form.Group id="password-confirm">
+              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Control type="password" ref={passwordConfirmRef} required />
+            </Form.Group>
+            <Button  className="w-100" type="submit">
+              Sign Up
+            </Button>
+          </Form>
+        </Card.Body>
+      </Card>
+      <div className="w-100 text-center mt-2">
+        Already have an account? <Link to="/login">Log In</Link>
       </div>
     </>
-  );
-};
-
-export default SignUp;
+  )
+}

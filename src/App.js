@@ -6,7 +6,8 @@ import Login from './components/Login/Login';
 import { BrowserRouter as Router , Switch , Route} from 'react-router-dom';
 import Signup from './components/Login/Signup';
 import Home from './components/Home';
-
+import {Container} from 'react-bootstrap'
+import {AuthProvider} from './components/Firebase/context/AuthContext'
 
 function App()  {
 
@@ -39,7 +40,16 @@ function App()  {
 
 
         <Route path="/Login/Signup">
-        <Signup/>
+          <AuthProvider>
+            <Container className='d-flex  align-items-center justify-content-center' style={{minHeight:'100vh'}}>
+         <div className='w-100' style={{maxwidth:'400px'}}>  
+           <Signup/>
+            </div>
+        
+        </Container>
+        </AuthProvider>
+        
+        
         </Route>
 
         <Route exact path='/'>
