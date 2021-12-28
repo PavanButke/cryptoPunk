@@ -5,8 +5,6 @@ import Create from './components/Create';
 import Login from './components/Login/Login';
 import { BrowserRouter as Router , Switch , Route} from 'react-router-dom';
 import Signup from './components/Login/Signup';
-
-
 import Home from './components/Home';
 
 
@@ -35,9 +33,9 @@ function App()  {
       </Route>
             
 
-        {/* <Route path="/Login/Login">
+        <Route path="/Login/Login">
         <Login/>
-        </Route> */}
+        </Route>
 
 
         <Route path="/Login/Signup">

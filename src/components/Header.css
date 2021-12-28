@@ -60,8 +60,8 @@
   .btn12 {
     border: 3px solid rgb(70, 5, 70);
     cursor: pointer;
-    padding: 20px 40px;
-    font-size: 16px;
+    padding: 10px 20px;
+    font-size: 12px;
     color: #bdb2b2;
     position: relative;
     background-color: rgb(1, 28, 49);
@@ -161,22 +161,23 @@
   }
 
   .loginButton{
+    width: fit-content;
     border: 3px solid #191919;
     cursor: pointer;
-    padding: 20px 40px;
-    font-size: 16px;
+    padding: 10px 20px;
+    font-size: 10px;
     color: #edf3f5;
     position: relative;
     background:  transparent;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     transition: all .3s;
-    border-radius: 20px;
+    border-radius: 10px;
     border-color: rgb(51, 1, 51);
   }
 
   .loginButton:before {
-    content: "Click Now!";
+    content: "click me";
     color: rgb(3, 15, 8);
     position: absolute;
     top: 0;
@@ -199,17 +200,18 @@
 
 
   .signupButton{
+    width: fit-content;
     border: 3px solid #191919;
     cursor: pointer;
-    padding: 20px 40px;
-    font-size: 16px;
+    padding: 10px 20px;
+    font-size: 10px;
     color: #edf3f5;
     position: relative;
     background:  transparent;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     transition: all .3s;
-    border-radius: 20px;
+    border-radius: 10px;
     border-color: rgb(51, 1, 51);
   }
 
