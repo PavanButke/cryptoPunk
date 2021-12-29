@@ -42,7 +42,8 @@ function App()  {
         <Route path="/Login/Signup">
           <AuthProvider>
             <Container className='d-flex  align-items-center justify-content-center' style={{minHeight:'100vh'}}>
-         <div className='w-100' style={{maxwidth:'400px'}}>  
+          
+           <div className='w-100' style={{maxwidth:'400px'}}>  
            <Signup/>
             </div>
         
