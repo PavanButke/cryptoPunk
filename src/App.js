@@ -34,7 +34,7 @@ function App()  {
       </Route>
             
 
-        <Route path="/Home">
+        <Route exact path="/Home">
         <Home/>
         </Route>
 
@@ -54,7 +54,16 @@ function App()  {
         </Route>
 
         <Route  path='/'>
+        <AuthProvider>
+            <Container className='d-flex  align-items-center justify-content-space-between' style={{minHeight:'100vh'}}>
+          
+           <div className='w-100' style={{maxwidth:'100px' , backgroundBlendMode:'darken'}}>  
           <Login/>
+            </div>
+            </Container>
+        </AuthProvider>
+
+          
         </Route>
 
        

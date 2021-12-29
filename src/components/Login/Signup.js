@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
- 
+
 import { Link, useHistory } from "react-router-dom"
 import { useAuth } from "../Firebase/context/AuthContext"
 
@@ -10,9 +10,10 @@ export default function Signup() {
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
-  const {signup , currentUser} = useAuth()
+  const {signup} = useAuth()
   const [error , setError]= useState('');
   const [loading , setLoading]=  useState(false)
+  const history = useHistory()
 
   async function handleSubmit(e){
       e.preventDefault()
@@ -25,11 +26,11 @@ export default function Signup() {
         setError("")
         setLoading(true)
           await signup(emailRef.current.value , passwordRef.current.value)
-
+          history.push('/home')
 
       }catch{
         
-        setError('Sorry ! But you have signed up earlier?')
+        setError('Sorry ! Invalid Details')
 
       }
       setLoading(false)
@@ -38,14 +39,12 @@ export default function Signup() {
 
   }
 
-
-
   return (
     <>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
-         {currentUser && currentUser.email}
+         
          {error && <Alert variant='danger'>{error}</Alert> }
           <Form onSubmit={  handleSubmit}>
             <Form.Group id="email">
@@ -67,8 +66,8 @@ export default function Signup() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
+        Already have an account? <Link to="Login/login">Log In</Link>
       </div>
     </>
   )
-}
+} 
