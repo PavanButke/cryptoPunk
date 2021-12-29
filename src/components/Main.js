@@ -48,19 +48,19 @@ const Main = ({ selectedPunk , punkListData}) =>{
                         </div>
 
                         <div class="container">
-                                <a href="" class="icon">
+                                <a href="https://www.facebook.com/pavan.butke" class="icon">
                                     <i class="facebook fab fa-facebook-f"></i>
                                 </a>
-                                <a href="" class="icon">
+                                <a href="https://twitter.com/pavanbutke" class="icon">
                                     <i class="twitter fab fa-twitter"></i>
                                 </a>
-                                <a href="" class="icon">
+                                <a href="https://www.instagram.com/pavanbutke/" class="icon">
                                     <i class="instagram fab fa-instagram"></i>
                                 </a>
-                                <a href="" class="icon">
+                                <a href="butkepavan55@gmail.com " class="icon">
                                     <i class="google fab fa-google"></i>
                                 </a>
-                                <a href="" class="icon">
+                                <a href="https://www.linkedin.com/in/pavan-butke-58bb74125/" class="icon">
                                     <i class="linkedin fab fa-linkedin"></i>
                                 </a>
                         </div>

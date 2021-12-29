@@ -169,22 +169,9 @@ const Header = () => {
 
       
       className='loginButton' >
-        Login
+        Log Out
       </button>
             
-    </div>
-
-
-    <div className='signupContainer'>
-
-      <button  
-          onClick={()=>{
-            history.push("./Login/Signup")}}
-
-      
-      className='signupButton' >
-        Signup
-      </button>
     </div>
     
 </div>
